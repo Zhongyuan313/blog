@@ -39,11 +39,11 @@
 <meta property="og:title" content="PHP学习">
 <meta property="og:url" content="http://example.com/2022/11/08/PHP%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="示例博客">
-<meta property="og:description" content="这是一个示例">
+<meta property="og:description" content="PHP函数创建PHP函数123456&lt;?phpfunction functionName()&amp;#123;    &#x2F;&#x2F; 要执行的代码&amp;#125;?&gt;  函数命名规范 由字母、数字和下划线组成，但是不能以数字开头 函数名字通常代表函数的功能，多功能函数的命名可以使用驼峰法和下划线法  ​        1.驼峰法：除了左边第一个单词外，后面所有单词的单词首字母都大写：showParenti">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-11-08T02:22:26.000Z">
-<meta property="article:modified_time" content="2022-11-08T02:22:26.797Z">
+<meta property="article:modified_time" content="2022-11-12T12:23:35.931Z">
 <meta property="article:author" content="中元">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -1742,7 +1742,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1668235120629),
+    lastupdate: new Date(1668255881987),
     sidebar: {
       for_page: ["blogger","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2573,7 +2573,55 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    
+    <h3 id="PHP函数"><a href="#PHP函数" class="headerlink" title="PHP函数"></a><strong>PHP函数</strong></h3><h4 id="创建PHP函数"><a href="#创建PHP函数" class="headerlink" title="创建PHP函数"></a><strong>创建PHP函数</strong></h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">functionName</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 要执行的代码</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="函数命名规范"><a href="#函数命名规范" class="headerlink" title="函数命名规范"></a><strong>函数命名规范</strong></h4><ul>
+<li>由字母、数字和下划线组成，但是不能以数字开头</li>
+<li>函数名字通常代表函数的功能，多功能函数的命名可以使用驼峰法和下划线法</li>
+</ul>
+<p>​        1.驼峰法：除了左边第一个单词外，后面所有单词的单词首字母都大写：<code>showParentinfo()</code></p>
+<p>​        2.下划线法：单词之间通过下划线链接，单词都是小写，<code>show_parent_info()</code></p>
+<ul>
+<li><p>在一个脚本周期中，不允许出现同名函数</p>
+</li>
+<li><p>特别的，与c语言不同PHP中可先调用函数后定义函数。（因为在PHP中，函数的调用是在代码执行阶段碰到函数名字时才会调用，在编译阶段则不会调用）</p>
+</li>
+</ul>
+<h4 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a><strong>函数参数</strong></h4><ul>
+<li>函数的参数分为两种：形参和实参</li>
+</ul>
+<p>​        形参：形式参数，不具有实际意义的参数，时在函数定义时使用的参数。</p>
+<p>​        实参：实际参数，具有实际数据意义的参数，是在函数调用时使用的参数。</p>
+<ul>
+<li><p>默认值</p>
+<p>默认值：default value，指的是形参的默认值，在函数定义的时候，就给形参一个初始赋值，如果实际调用传入的参数（实参）没有提供，那么形参就会使用定义时的值来进入函数的内部参与运算。</p>
+</li>
+<li><p>引用传递</p>
+<p>实参在调用时会将值赋值给形参，那么实际上使用的方式就是一种简单的值传递：将实参（如果是变量或者常量或者其他表达式）的结果（值）取出来给形参：形参与外部实际传入的参数本身没有任何关联，只是结果一样。</p>
+<p>有的时候，希望在函数内部拿到的外部数据，能够在函数内部改变，那么就需要在定义时明确告知函数，函数才会在调用时取主动获取外部的内存地址。以上这种定义形参的方式叫做<em>引用传值</em>。</p>
+<p>基本定义语法：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Function 函数名（&amp;形参）&#123;</span><br><span class="line">    <span class="comment">//函数体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>引用传值传的是地址。</p>
+<p>在调用的时候，必须传入实参，而且参数本身必须是变量（变量才有指向的数据的内存地址）。</p>
+</li>
+</ul>
+<h4 id="函数体"><a href="#函数体" class="headerlink" title="函数体"></a><strong>函数体</strong></h4><ul>
+<li>函数体：函数内部的所有代码都称之为函数体。</li>
+<li>函数返回值：将函数实现的结果，通过return关键字，返回给函数外部（函数调用处），在PHP中所有的函数都有返回值（默认返回NULL）。</li>
+</ul>
+<h4 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a><strong>作用域</strong></h4><ul>
+<li><p>作用域</p>
+<p>作用域：变量（常量）能够被访问的区域</p>
+</li>
+<li><p>变量</p>
+<p>全局变量：用户普通定义的变量。在PHP中只允许在全局空间使用，理论上函数内部不可使用。作用域为脚本周期，即直到脚本运行结束。</p>
+<p>局部变量：函数内部定义的变量。在PHP中只允许在当前函数自己内部使用。作用域为函数周期，即直到函数结束。</p>
+<p>超全局变量：系统定义的变量。作用域没有访问限制.</p>
+<p>特别的：若定义全局变量<code>$globals</code>,超全局变量会将全局变量自动纳入到$GLOBALS里面，而$GLOBALS没有作用域限制，所以能够帮助局部去访问全局变量，但是必须使用数组方式。</p>
+</li>
+</ul>
+
   </div>
   
   
@@ -2597,10 +2645,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-11-08T10:22:26+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-11-12T20:23:35+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Nov 8, 2022</p>
+    <p>更新于：Nov 12, 2022</p>
   </a>
 </div>
 
@@ -2728,9 +2776,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
 
-  <div class="">
-    <!-- pjax占位 -->
-  </div>
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP%E5%87%BD%E6%95%B0"><span class="toc-text">PHP函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAPHP%E5%87%BD%E6%95%B0"><span class="toc-text">创建PHP函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83"><span class="toc-text">函数命名规范</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0"><span class="toc-text">函数参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E4%BD%93"><span class="toc-text">函数体</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-text">作用域</span></a></li></ol></li></ol>
+    </div>
+  </section>
 
   
 
@@ -3298,7 +3356,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"示例博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"中元","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"这是一个示例"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"示例博客"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/11/08/PHP学习/","name":"PHP学习"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"示例博客","url":"http://example.com/","keywords":null,"description":"这是一个示例","author":{"@type":"Person","name":"中元","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"这是一个示例"},"publisher":{"@type":"Organization","name":"示例博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"PHP学习","description":"这是一个示例","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/11/08/PHP%E5%AD%A6%E4%B9%A0/"},"author":{"@type":"Person","name":"中元","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"示例博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/11/08/PHP%E5%AD%A6%E4%B9%A0/","wordCount":0,"datePublished":"2022-11-08T02:22:26.000Z","dateModified":"2022-11-08T02:22:26.797Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"示例博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"中元","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"这是一个示例"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"示例博客"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/11/08/PHP学习/","name":"PHP学习"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"示例博客","url":"http://example.com/","keywords":null,"description":"这是一个示例","author":{"@type":"Person","name":"中元","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"这是一个示例"},"publisher":{"@type":"Organization","name":"示例博客","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"PHP学习","description":"这是一个示例","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/11/08/PHP%E5%AD%A6%E4%B9%A0/"},"author":{"@type":"Person","name":"中元","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"示例博客","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/11/08/PHP%E5%AD%A6%E4%B9%A0/","wordCount":0,"datePublished":"2022-11-08T02:22:26.000Z","dateModified":"2022-11-12T12:23:35.931Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
